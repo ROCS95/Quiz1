@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="quizunoModel1StoreContainer" CdmEntityContainer="ExperienciaEntities">
+    <EntitySetMapping Name="experiencia">
+      <EntityTypeMapping TypeName="quizunoModel1.experiencia">
+        <MappingFragment StoreEntitySet="experiencia">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="detalles" ColumnName="detalles" />
+          <ScalarProperty Name="lugar" ColumnName="lugar" />
+          <ScalarProperty Name="puesto" ColumnName="puesto" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

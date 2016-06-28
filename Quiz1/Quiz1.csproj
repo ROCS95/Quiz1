@@ -80,6 +80,8 @@
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -196,14 +198,71 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\experienciasController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\lenguagesController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\usuariosController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\experiencia.cs">
+      <DependentUpon>ExperienciaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ExperienciaModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ExperienciaModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ExperienciaModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ExperienciaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ExperienciaModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ExperienciaModel.edmx</DependentUpon>
+    </Compile>
     <Compile Include="Models\IdentityModels.cs" />
+    <Compile Include="Models\LenguageModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>LenguageModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\LenguageModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>LenguageModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\LenguageModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>LenguageModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\lenguages.cs">
+      <DependentUpon>LenguageModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Models\usuario.cs">
+      <DependentUpon>UsuarioModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\UsuarioModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>UsuarioModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\UsuarioModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>UsuarioModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\UsuarioModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>UsuarioModel.edmx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
@@ -214,12 +273,63 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="Models\ExperienciaModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ExperienciaModel.edmx</DependentUpon>
+      <LastGenOutput>ExperienciaModel.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\ExperienciaModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ExperienciaModel.edmx</DependentUpon>
+      <LastGenOutput>ExperienciaModel.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\LenguageModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>LenguageModel.edmx</DependentUpon>
+      <LastGenOutput>LenguageModel.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\LenguageModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>LenguageModel.edmx</DependentUpon>
+      <LastGenOutput>LenguageModel.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\UsuarioModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>UsuarioModel.edmx</DependentUpon>
+      <LastGenOutput>UsuarioModel.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\UsuarioModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>UsuarioModel.edmx</DependentUpon>
+      <LastGenOutput>UsuarioModel.cs</LastGenOutput>
+    </Content>
     <Content Include="Scripts\ai.0.15.0-build58334.js" />
     <Content Include="Scripts\ai.0.15.0-build58334.min.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <EntityDeploy Include="Models\ExperienciaModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>ExperienciaModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\ExperienciaModel.edmx.diagram">
+      <DependentUpon>ExperienciaModel.edmx</DependentUpon>
+    </Content>
+    <EntityDeploy Include="Models\LenguageModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>LenguageModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\LenguageModel.edmx.diagram">
+      <DependentUpon>LenguageModel.edmx</DependentUpon>
+    </Content>
+    <EntityDeploy Include="Models\UsuarioModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>UsuarioModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\UsuarioModel.edmx.diagram">
+      <DependentUpon>UsuarioModel.edmx</DependentUpon>
     </Content>
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
@@ -267,6 +377,21 @@
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
+    <Content Include="Views\usuarios\Create.cshtml" />
+    <Content Include="Views\usuarios\Delete.cshtml" />
+    <Content Include="Views\usuarios\Details.cshtml" />
+    <Content Include="Views\usuarios\Edit.cshtml" />
+    <Content Include="Views\lenguages\Create.cshtml" />
+    <Content Include="Views\lenguages\Delete.cshtml" />
+    <Content Include="Views\lenguages\Details.cshtml" />
+    <Content Include="Views\lenguages\Edit.cshtml" />
+    <Content Include="Views\lenguages\Index.cshtml" />
+    <Content Include="Views\experiencias\Create.cshtml" />
+    <Content Include="Views\experiencias\Delete.cshtml" />
+    <Content Include="Views\experiencias\Details.cshtml" />
+    <Content Include="Views\experiencias\Edit.cshtml" />
+    <Content Include="Views\experiencias\Index.cshtml" />
+    <Content Include="Views\usuarios\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -278,6 +403,9 @@
     <Content Include="packages.config" />
     <None Include="Project_Readme.html" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

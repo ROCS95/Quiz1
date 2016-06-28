@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="quizunoModelStoreContainer" CdmEntityContainer="UsuarioEntities1">
+    <EntitySetMapping Name="usuario">
+      <EntityTypeMapping TypeName="quizunoModel.usuario">
+        <MappingFragment StoreEntitySet="usuario">
+          <ScalarProperty Name="educacion" ColumnName="educacion" />
+          <ScalarProperty Name="empleoan" ColumnName="empleoan" />
+          <ScalarProperty Name="empleoac" ColumnName="empleoac" />
+          <ScalarProperty Name="nombre" ColumnName="nombre" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

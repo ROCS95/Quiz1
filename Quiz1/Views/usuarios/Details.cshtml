@@ -1,0 +1,58 @@
+﻿@model Quiz1.Models.usuario
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Details</title>
+</head>
+<body>
+    <div>
+        <h4>usuario</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.nombre)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.nombre)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.empleoac)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.empleoac)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.empleoan)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.empleoan)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.educacion)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.educacion)
+            </dd>
+    
+        </dl>
+    </div>
+    <p>
+        @Html.ActionLink("Edit", "Edit", new { id = Model.id }) |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+</body>
+</html>
